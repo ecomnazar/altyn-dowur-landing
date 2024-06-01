@@ -14,7 +14,7 @@ export default function Home() {
       <OurTarget />
       <OurAdvantage />
       <OurServices />
-      <OurAddress />
+      {/* <OurAddress /> */}
       <Footer />
     </>
   );
