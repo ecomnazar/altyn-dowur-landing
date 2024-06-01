@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: white;
+}
+
+input{outline: none;}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  /* display: none; */
+  /* -webkit-appearance: none; */
+}
