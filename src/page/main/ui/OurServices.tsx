@@ -6,7 +6,7 @@ import React from 'react'
 
 export const OurServices = () => {
     return (
-        <Section className="!py-0">
+        <Section id='services' className="!py-0">
             <Container>
                 <Title className="mt-16">НАШИ УСЛУГИ</Title>
                 <div className="space-y-4 mt-8">

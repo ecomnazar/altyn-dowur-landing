@@ -6,7 +6,7 @@ import React from 'react'
 
 export const OurTarget = () => {
     return (
-        <Section className="bg-[#95B295]/50">
+        <Section id='target' className="bg-[#95B295]/50">
             <Container>
                 <Title>НАША ЦЕЛЬ-СТРЕМЛЕНИЕ К ЛУЧШИМ РЕЗУЛЬТАТАМ</Title>
                 <div className="items-center grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-8">

@@ -5,6 +5,7 @@ import { OurAddress } from "@/page/main/ui/OurAddress";
 import { OurAdvantage } from "@/page/main/ui/OurAdvantage";
 import { OurServices } from "@/page/main/ui/OurServices";
 import { OurTarget } from "@/page/main/ui/OurTarget";
+import { CargoTrackConfirmationModal } from "@/page/main/ui/modals/CargoTrackConfirmationModal";
 
 export default function Home() {
   return (
@@ -16,6 +17,11 @@ export default function Home() {
       <OurServices />
       {/* <OurAddress /> */}
       <Footer />
+
+      {/* MODALS */}
+
+      <CargoTrackConfirmationModal />
+
     </>
   );
 }

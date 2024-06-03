@@ -1,5 +1,6 @@
 'use client'
 
+import { useStore } from '@/entities/useStore'
 import { Button } from '@/shared/ui/Button'
 import { Container } from '@/shared/ui/Container'
 import { Section } from '@/shared/ui/Section'
@@ -12,7 +13,19 @@ export const CargoTranportation = () => {
 
     const [isOpen, setIsOpen] = React.useState(false)
     const [enableInfo, setEnableInfo] = React.useState(false)
-    const [enableTrack, setEnableTrack] = React.useState(false)
+
+    const enableTrack = useStore((state) => state.trackEnabled)
+    const changeEnableTrack = useStore((state) => state.changeTrackEnabled)
+
+    const openModal = useStore((state) => state.changeTrackModal)
+
+    const handleEnableTrack = () => {
+        if (enableTrack) {
+            changeEnableTrack(false)
+        } else {
+            openModal(true)
+        }
+    }
 
     const handleOpen = () => setIsOpen((prev) => !prev)
 
@@ -67,7 +80,7 @@ export const CargoTranportation = () => {
                                         <input type="text" placeholder='Вес груза' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                     <div className=''>
-                                        <button onClick={() => setEnableTrack((prev) => !prev)} className='flex items-center justify-center gap-x-2 rounded-full h-12 w-full bg-primary text-white'>
+                                        <button onClick={handleEnableTrack} className='flex items-center justify-center gap-x-2 rounded-full h-12 w-full bg-primary text-white'>
                                             <div className='relative w-3.5 h-3.5 border-2 border-white flex items-center justify-center'>
                                                 {enableTrack && <Image src="/icons/white-tick.svg" fill alt="Tick icon" />}
                                             </div>

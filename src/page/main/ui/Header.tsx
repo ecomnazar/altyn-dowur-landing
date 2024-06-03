@@ -11,9 +11,9 @@ export const Header = () => {
                 <div className="bg-white/80 backdrop-blur-sm py-3 px-5 rounded-full flex items-center justify-between">
                     <Image width={70} height={70} src="/images/logo.png" alt="Altyn Döwür HJ Logo" />
                     <ul className="hidden md:flex items-center gap-x-4">
-                        <li><Link href={'/about'} className="text-secondary font-medium text-[18px]" >О компани</Link></li>
-                        <li><Link href={'/services'} className="text-secondary font-medium text-[18px]" >Услуги</Link></li>
-                        <li><Link href={'/contacts'} className="text-secondary font-medium text-[18px]" >Контакты</Link></li>
+                        <li><a href={'#target'} className="text-secondary font-medium text-[18px]" >О компани</a></li>
+                        <li><a href={'#services'} className="text-secondary font-medium text-[18px]" >Услуги</a></li>
+                        <li><a href={'#footer'} className="text-secondary font-medium text-[18px]" >Контакты</a></li>
                     </ul>
                     <div className='flex items-center gap-x-4'>
                         <div className='hidden md:flex items-center gap-x-2'>
@@ -21,12 +21,16 @@ export const Header = () => {
                                 <h4 className='text-[18px] font-medium'>RU</h4>
                                 <Image src={'/icons/arrow-down.svg'} width={14} height={14} alt='Arrow down icon' />
                             </button>
-                            <MiniButton
-                                title="+993 63 877877"
-                                icon={<Image src={'/icons/call-icon.svg'} width={22} height={22} alt="Call icon" />}
-                            />
+                            <a href="tel:+99363877877">
+                                <MiniButton
+                                    title="+993 63 877877"
+                                    icon={<Image src={'/icons/call-icon.svg'} width={22} height={22} alt="Call icon" />}
+                                />
+                            </a>
                         </div>
-                        <Image src={'/icons/menu.svg'} width={22} height={22} alt='Menu icon' />
+                        <button className='md:hidden block'>
+                            <Image src={'/icons/menu.svg'} width={22} height={22} alt='Menu icon' />
+                        </button>
                     </div>
                 </div>
                 <div className="mt-[50px] sm:mt-[150px] space-y-4 text-center">

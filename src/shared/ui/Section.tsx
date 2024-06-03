@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import React from 'react'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLElement> {
     className?: string
     children: React.ReactNode
 }
 
-export const Section: React.FC<Props> = ({ className, children }) => {
+export const Section: React.FC<Props> = ({ className, children, ...props }) => {
     return (
-        <section className={clsx('py-12 md:py-24', className)}>{children}</section>
+        <section {...props} className={clsx('py-12 md:py-24', className)}>{children}</section>
     )
 }
