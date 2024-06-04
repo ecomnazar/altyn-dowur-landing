@@ -33,8 +33,8 @@ export const CargoTrackConfirmationModal = () => {
                 </button>
                 <h3 className='text-primary font-bold text-[20px] text-center max-w-[440px]'>Данная услуга является платной и производится за каждый вагона</h3>
                 <div className='w-full space-y-4 mt-4'>
-                    <Button onClick={onSave} className='!py-2.5 w-full transition-all hover:scale-[1.03] hover:!bg-white hover:!text-primary border border-primary '>Продолжить</Button>
-                    <Button onClick={onClose} className='!py-2.5 border transition-all hover:scale-[1.03] bg-primary text-white border-primary w-full'>Назад</Button>
+                    <Button onClick={onSave} className='!py-2.5 w-full transition-all hover:scale-[1.03] hover:!bg-white hover:!text-primary border border-primary'>Продолжить</Button>
+                    <Button onClick={onClose} className='!py-2.5 w-full transition-all hover:scale-[1.03] hover:!bg-white hover:!text-primary border border-primary'>Назад</Button>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import { Container } from '@/shared/ui/Container'
+import { MenuButton } from '@/shared/ui/MenuButton'
 import { MiniButton } from '@/shared/ui/MiniButton'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,16 +8,17 @@ import React from 'react'
 export const Header = () => {
     return (
         <header className="h-screen w-screen relative bg-header-background bg-cover bg-center pt-8">
-            <Container>
+            <Container className='relative'>
                 <div className="bg-white/80 backdrop-blur-sm py-3 px-5 rounded-full flex items-center justify-between">
                     <Image width={70} height={70} src="/images/logo.png" alt="Altyn Döwür HJ Logo" />
-                    <ul className="hidden md:flex items-center gap-x-4">
+                    <ul className="hidden lg:flex items-center gap-x-4">
+                        <li className='text-[18px] text-primary font-semibold'>Грузоперевозки</li>
                         <li><a href={'#target'} className="text-secondary font-medium text-[18px]" >О компани</a></li>
                         <li><a href={'#services'} className="text-secondary font-medium text-[18px]" >Услуги</a></li>
                         <li><a href={'#footer'} className="text-secondary font-medium text-[18px]" >Контакты</a></li>
                     </ul>
                     <div className='flex items-center gap-x-4'>
-                        <div className='hidden md:flex items-center gap-x-2'>
+                        <div className='hidden lg:flex items-center gap-x-2'>
                             <button className='flex items-center gap-x-2'>
                                 <h4 className='text-[18px] font-medium'>RU</h4>
                                 <Image src={'/icons/arrow-down.svg'} width={14} height={14} alt='Arrow down icon' />
@@ -28,9 +30,11 @@ export const Header = () => {
                                 />
                             </a>
                         </div>
-                        <button className='md:hidden block'>
-                            <Image src={'/icons/menu.svg'} width={22} height={22} alt='Menu icon' />
-                        </button>
+                        <div className='text-[16px] bg-[#4A6D4A] rounded-full pr-3 text-white hidden md:flex items-center justify-center h-[44px]'>
+                            <Link href={'/register'} className='bg-primary h-full rounded-full mr-3 px-3 flex items-center'>Регистрация</Link>
+                            <Link href={'/login'}>Войти</Link>
+                        </div>
+                        <MenuButton />
                     </div>
                 </div>
                 <div className="mt-[50px] sm:mt-[150px] space-y-4 text-center">

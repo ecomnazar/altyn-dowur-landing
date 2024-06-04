@@ -1,5 +1,6 @@
 import { Header } from "@/page/main";
 import { CargoTranportation } from "@/page/main/ui/CargoTranportation";
+import { Clients } from "@/page/main/ui/Clients";
 import { Footer } from "@/page/main/ui/Footer";
 import { OurAddress } from "@/page/main/ui/OurAddress";
 import { OurAdvantage } from "@/page/main/ui/OurAdvantage";
@@ -9,19 +10,20 @@ import { CargoTrackConfirmationModal } from "@/page/main/ui/modals/CargoTrackCon
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Header />
       <CargoTranportation />
       <OurTarget />
       <OurAdvantage />
       <OurServices />
-      {/* <OurAddress /> */}
+      <Clients />
+      <OurAddress />
       <Footer />
 
       {/* MODALS */}
 
       <CargoTrackConfirmationModal />
 
-    </>
+    </div>
   );
 }
