@@ -37,8 +37,9 @@ export const CargoTranportation = () => {
             <Container>
                 <div className="flex flex-col md:flex-row items-start space-y-2 mb-8 md:mb-0 md:items-center justify-between">
                     <Title>ГРУЗОПЕРЕВОЗКИ</Title>
+                    <Image src={'/icons/green-line.svg'} width={300} height={1} alt='Green line' className='hidden lg:block' />
                     <div className='relative w-full md:w-fit'>
-                        <Button onClick={handleOpen}>РАССЧИТАТЬ СТОИМОСТЬ</Button>
+                        <Button onClick={handleOpen} className='border border-primary hover:bg-white hover:text-primary transition-all'>РАССЧИТАТЬ СТОИМОСТЬ</Button>
                         <form onSubmit={sendForm} className={clsx('bg-[#004900]/40 z-[99] absolute rounded-[16px] w-[] sm:w-[400px] md:w-[600px] bottom-0 left-0 md:left-auto md:right-0  p-6 backdrop-blur-sm transition-all duration-500', {
                             'translate-y-[110%] opacity-1': isOpen,
                             'translate-y-[105%] opacity-0': !isOpen
@@ -66,7 +67,7 @@ export const CargoTranportation = () => {
                                     </div>
                                 </div>
 
-                                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                                <div className='grid grid-cols-2 gap-2 sm:gap-4'>
                                     <div>
                                         <input type="text" placeholder='Ваше имя' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
@@ -105,12 +106,12 @@ export const CargoTranportation = () => {
 
                 <div className="mx-auto">
                     <Image src={'/images/map.png'} alt="Map" width={1200} height={1200} />
-                    <div className="flex items-center">
-                        <Image src={'/images/trains.png'} alt="Trains" width={600} height={600} />
-                        <Image src={'/images/trains.png'} alt="Trains" width={600} height={600} />
-                    </div>
                 </div>
             </Container>
+            <div className="flex items-center justify-end">
+                <Image src={'/images/trains.png'} alt="Trains" width={700} height={600} />
+                <Image src={'/images/trains.png'} alt="Trains" width={700} height={600} />
+            </div>
         </Section>
     )
 }

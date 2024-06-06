@@ -1,14 +1,27 @@
-import { Container } from '@/shared/ui/Container'
-import { MenuButton } from '@/shared/ui/MenuButton'
-import { MiniButton } from '@/shared/ui/MiniButton'
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
+
+import clsx from 'clsx'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Container } from '@/shared/ui/Container'
+import { MiniButton } from '@/shared/ui/MiniButton'
+import { useOutsideClick } from '@/shared/hooks/useOutsideClick'
 
 export const Header = () => {
+    const [isOpenMenu, setIsOpenMenu] = React.useState(false)
+
+    const closeMenu = () => {
+        // setIsOpenMenu(false)
+    }
+
+    const divRef = useOutsideClick(() => {
+        setIsOpenMenu(false)
+    })
+
     return (
-        <header className="h-screen w-screen relative bg-header-background bg-cover bg-center pt-8">
-            <Container className='relative'>
+        <header className="relative h-[120vh] sm:h-screen w-screen bg-header-background bg-cover bg-center pt-8">
+            <Container>
                 <div className="bg-white/80 backdrop-blur-sm py-3 px-5 rounded-full flex items-center justify-between">
                     <Image width={70} height={70} src="/images/logo.png" alt="Altyn Döwür HJ Logo" />
                     <ul className="hidden lg:flex items-center gap-x-4">
@@ -34,9 +47,45 @@ export const Header = () => {
                             <Link href={'/register'} className='bg-primary h-full rounded-full mr-3 px-3 flex items-center'>Регистрация</Link>
                             <Link href={'/login'}>Войти</Link>
                         </div>
-                        <MenuButton />
+                        <button onClick={() => setIsOpenMenu(true)} className='lg:hidden block'>
+                            <Image src={'/icons/menu.svg'} width={22} height={22} alt='Menu icon' />
+                        </button>
+                        {/* <MenuButton /> */}
                     </div>
                 </div>
+
+
+                <div onClick={closeMenu} className={clsx('fixed transition-all duration-500 z-[999] bg-opacity-30 top-0 left-0 bg-black w-screen h-screen flex justify-end', {
+                    'visible opacity-100': isOpenMenu,
+                    'invisible opacity-100': !isOpenMenu
+                })}>
+                    <div ref={divRef} className={clsx('bg-[#004900A6] backdrop-blur-sm text-white w-[70%] h-screen p-4 transition-all duration-500 flex justify-end', {
+                        'translate-x-0': isOpenMenu,
+                        'translate-x-[100%]': !isOpenMenu
+                    })}>
+                        <ul className='space-y-3 text-right mt-8'>
+                            <li className='flex items-center justify-end gap-x-2'>
+                                <button className='text-[16px] font-semibold'>RU</button>
+                                <Image src={'/icons/arrow-up.svg'} alt='Arrow up' width={20} height={20} />
+                            </li>
+                            <li onClick={() => setIsOpenMenu(false)}><a className='text-[16px] font-semibold' href="#target">О компании</a></li>
+                            <li onClick={() => setIsOpenMenu(false)}><a className='text-[16px] font-semibold' href="#services">Услуги</a></li>
+                            <li onClick={() => setIsOpenMenu(false)}><a className='text-[16px] font-semibold' href="#footer">Контакты</a></li>
+                            <li onClick={() => setIsOpenMenu(false)}><Link className='font-semibold' href="/register">Регистрация</Link></li>
+                            <li onClick={() => setIsOpenMenu(false)}><Link className='font-semibold' href="/login">Войти</Link></li>
+                            <div onClick={() => setIsOpenMenu(false)} className='absolute bottom-5 right-4'>
+                                <a href="tel:+99363877877">
+                                    <MiniButton
+                                        title="+993 63 87-78-77"
+                                        icon={<Image src={'/icons/call-icon-green.svg'} width={22} height={22} alt="Call icon" />}
+                                        className='!font-normal !bg-white !text-primary'
+                                    />
+                                </a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
                 <div className="mt-[50px] sm:mt-[150px] space-y-4 text-center">
                     <h2 className="text-center text-[28px] sm:text-[34px] md:text-[46px] font-semibold max-w-[950px] mx-auto text-white">
                         Оптимизируйте свои операции по
@@ -47,7 +96,8 @@ export const Header = () => {
                     <button className="text-white border rounded-full w-[250px] md:w-[350px] h-[60px] mx-auto font-semibold hover:bg-white hover:text-primary transition-all text-[18px] block !mt-8">Заказать звонок</button>
                 </div>
             </Container>
-            <div>
+
+            <div >
                 <Container className="shadow-lg w-[90%] sm:w-full absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex flex-wrap justify-between bg-white/80 backdrop-blur-sm rounded-[30px] py-8 px-12 gap-y-8">
                     <div className="basis-[30%]">
                         <div className="flex items-start">

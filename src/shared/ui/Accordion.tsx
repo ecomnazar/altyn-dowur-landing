@@ -15,7 +15,7 @@ export const Accordion: React.FC<AccordionProps> = ({ title, description }) => {
     return (
         <div onClick={() => setIsOpen(!isOpen)} className='cursor-pointer shadow-lg p-4 rounded-[30px] border border-primary'>
             <div className='flex items-center justify-between'>
-                <button>{title}</button>
+                <button className='text-left'>{title}</button>
                 <FaPlus className={clsx('text-primary transition-all duration-500', {
                     'rotate-45': isOpen,
                 })} size={24} />

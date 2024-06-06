@@ -7,6 +7,7 @@ import { OurAdvantage } from "@/page/main/ui/OurAdvantage";
 import { OurServices } from "@/page/main/ui/OurServices";
 import { OurTarget } from "@/page/main/ui/OurTarget";
 import { CargoTrackConfirmationModal } from "@/page/main/ui/modals/CargoTrackConfirmationModal";
+import { ServiceEnabledModal } from "@/page/main/ui/modals/ServiceEnabledModal";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       {/* MODALS */}
 
       <CargoTrackConfirmationModal />
+      <ServiceEnabledModal />
 
     </div>
   );
