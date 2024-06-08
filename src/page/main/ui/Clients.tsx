@@ -25,12 +25,12 @@ export const Clients = () => {
                     <Title className='whitespace-nowrap'>Что говорят наши <span className='hidden lg:inline-block'>клиенты</span></Title>
                     <div className='hidden lg:inline-block h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
 
-                    <div className='w-full flex items-center justify-between'>
+                    <div className='w-full flex lg:hidden items-center justify-between'>
                         <div className='flex items-center w-full'>
                             <Title>клиенты</Title>
                             <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
                         </div>
-                        <div className='lg:hidden flex items-center gap-x-3'>
+                        <div className='flex items-center gap-x-3'>
                             <button onClick={handlePrev} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full rotate-180'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
                             <button onClick={handleNext} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
                         </div>
