@@ -9,7 +9,16 @@ export const OurAdvantage = () => {
     return (
         <Section id='advantages' className="!pb-0 relative">
             <Container>
-                <Title>ПРЕМУШЕСТВА НАШИХ УСЛУГ</Title>
+                <div className='flex flex-col md:flex-row items-start md:items-center gap-x-4'>
+                    <Title className='whitespace-nowrap'>ПРЕМУШЕСТВА НАШИХ <span className='hidden md:inline-block'>УСЛУГ</span></Title>
+                    <div className='h-[2px] w-full hidden md:block bg-primary' />
+                    <div className='w-full'>
+                        <div className='inline-flex w-full items-center md:hidden gap-x-4'>
+                            <Title>УСЛУГ</Title>
+                            <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary via-primary/50 to-primary/0' />
+                        </div>
+                    </div>
+                </div>
                 <div className="grid grid-cols-1 -space-y-8 md:space-y-0 md:grid-cols-6 mt-12 md:mt-48 relative z-[99]">
                     <div className="flex flex-col justify-end first md:-translate-y-[20px] lg:translate-y-0 items-center w-fit md:w-auto mr-auto md:mr-0 group">
                         <Image width={50} height={50} src="/icons/services-icon-1.svg" alt="Service 1" className="md:mx-auto mb-4 group-hover:-translate-y-2 transition-all" />

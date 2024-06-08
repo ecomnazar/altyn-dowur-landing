@@ -21,9 +21,21 @@ export const Clients = () => {
     return (
         <Section>
             <Container>
-                <div className='flex items-center justify-between mb-8'>
-                    <Title>Что говорят наши клиенты</Title>
-                    <div className='flex items-center gap-x-3'>
+                <div className='w-full flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8'>
+                    <Title className='whitespace-nowrap'>Что говорят наши <span className='hidden lg:inline-block'>клиенты</span></Title>
+                    <div className='hidden lg:inline-block h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
+
+                    <div className='w-full flex items-center justify-between'>
+                        <div className='flex items-center w-full'>
+                            <Title>клиенты</Title>
+                            <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
+                        </div>
+                        <div className='flex items-center gap-x-3'>
+                            <button onClick={handlePrev} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full rotate-180'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
+                            <button onClick={handleNext} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
+                        </div>
+                    </div>
+                    <div className='hidden lg:flex items-center gap-x-3'>
                         <button onClick={handlePrev} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full rotate-180'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
                         <button onClick={handleNext} className='w-10 h-10 bg-[#333333] hover:bg-primary p-2.5 rounded-full'><Image src={'/icons/arrow-right.svg'} width={35} height={45} alt='Arrow icon' /></button>
                     </div>
@@ -41,7 +53,9 @@ export const Clients = () => {
                             <div className='bg-[#F1F4F7] py-4 px-6 rounded-[20px]'>
                                 <div className='flex items-start justify-between'>
                                     <div className='flex items-center gap-x-4'>
-                                        <div className='w-20 h-20 rounded-[24px] bg-[#666666]' />
+                                        <div>
+                                            <div className='w-20 h-20 rounded-full bg-[#666666]' />
+                                        </div>
                                         <div>
                                             <h3 className='text-[#333333] font-medium text-[19px]'>Максим Свиридов</h3>
                                             <p className='text-[#777777] text-[13px]'>Уборка после ремонта</p>

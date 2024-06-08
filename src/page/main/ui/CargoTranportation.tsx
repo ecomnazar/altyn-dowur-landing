@@ -36,10 +36,14 @@ export const CargoTranportation = () => {
         <Section className="pt-[270px] md:pt-48">
             <Container>
                 <div className="flex flex-col md:flex-row items-start space-y-2 mb-8 md:mb-0 md:items-center justify-between">
-                    <Title>ГРУЗОПЕРЕВОЗКИ</Title>
-                    <Image src={'/icons/green-line.svg'} width={300} height={1} alt='Green line' className='hidden lg:block' />
+                    <div className='flex items-center w-full'>
+                        <Title>ГРУЗОПЕРЕВОЗКИ</Title>
+                        <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
+                    </div>
+
+                    {/* <Image src={'/icons/green-line.svg'} width={300} height={1} alt='Green line' className='hidden lg:block' /> */}
                     <div className='relative w-full md:w-fit'>
-                        <Button onClick={handleOpen} className='border border-primary hover:bg-white hover:text-primary transition-all'>РАССЧИТАТЬ СТОИМОСТЬ</Button>
+                        <Button onClick={handleOpen} className='whitespace-nowrap border border-primary hover:bg-white hover:text-primary transition-all'>РАССЧИТАТЬ СТОИМОСТЬ</Button>
                         <form onSubmit={sendForm} className={clsx('bg-[#004900]/40 z-[99] absolute rounded-[16px] w-[] sm:w-[400px] md:w-[600px] bottom-0 left-0 md:left-auto md:right-0  p-6 backdrop-blur-sm transition-all duration-500', {
                             'translate-y-[110%] opacity-1': isOpen,
                             'translate-y-[105%] opacity-0': !isOpen
