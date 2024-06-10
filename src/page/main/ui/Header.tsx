@@ -55,11 +55,11 @@ export const Header = () => {
                 </div>
 
 
-                <div onClick={closeMenu} className={clsx('fixed transition-all duration-500 z-[999] bg-opacity-30 top-0 left-0 bg-black w-screen h-screen flex justify-end', {
+                <div onClick={closeMenu} className={clsx('fixed transition-all duration-500 backdrop-blur-sm z-[999] bg-opacity-30 top-0 left-0 bg-black w-screen h-screen flex justify-end', {
                     'visible opacity-100': isOpenMenu,
                     'invisible opacity-100': !isOpenMenu
                 })}>
-                    <div ref={divRef} className={clsx('bg-[#004900A6] backdrop-blur-sm text-white w-[70%] h-screen p-4 transition-all duration-500 flex justify-end', {
+                    <div ref={divRef} className={clsx('bg-[#004900A6] rounded-tl-[30px] rounded-bl-[30px] backdrop-blur-sm text-white w-[70%] h-screen p-4 transition-all duration-500 flex justify-end', {
                         'translate-x-0': isOpenMenu,
                         'translate-x-[100%]': !isOpenMenu
                     })}>
