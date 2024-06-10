@@ -24,7 +24,7 @@ export const Header = () => {
             <Container>
                 <div className="bg-white/80 backdrop-blur-sm py-3 px-5 rounded-full flex items-center justify-between">
                     <Image width={70} height={70} src="/images/logo.png" alt="Altyn Döwür HJ Logo" />
-                    <ul className="hidden lg:flex items-center gap-x-4">
+                    <ul className="hidden lg:flex items-center gap-x-8">
                         <li className='text-[18px] text-primary font-semibold'>Грузоперевозки</li>
                         <li><a href={'#target'} className="text-secondary font-medium text-[18px]" >О компани</a></li>
                         <li><a href={'#services'} className="text-secondary font-medium text-[18px]" >Услуги</a></li>
@@ -32,7 +32,7 @@ export const Header = () => {
                     </ul>
                     <div className='flex items-center gap-x-4'>
                         <div className='hidden lg:flex items-center gap-x-2'>
-                            <button className='flex items-center gap-x-2'>
+                            <button className='flex items-center gap-x-2 mr-2'>
                                 <h4 className='text-[18px] font-medium'>RU</h4>
                                 <Image src={'/icons/arrow-down.svg'} width={14} height={14} alt='Arrow down icon' />
                             </button>
