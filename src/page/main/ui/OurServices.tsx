@@ -13,7 +13,7 @@ export const OurServices = () => {
                     <div className=''>
                         <Title className="whitespace-nowrap">НАШИ УСЛУГИ</Title>
                     </div>
-                    <div className='h-[2px] w-full bg-primary' />
+                    <div className='h-[2px] w-full bg-gradient-to-r from-primary via-primary/50 to-primary/0' />
                     {/* <div className='h-[2px] basis-[48%] lg:basis-[58%] bg-primary' /> */}
                     {/* <Image src={'/icons/green-line.svg'} width={700} height={1} alt='Green line' className='hidden lg:block' /> */}
                 </div>

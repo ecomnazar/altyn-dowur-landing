@@ -11,7 +11,7 @@ export const OurAdvantage = () => {
             <Container>
                 <div className='flex flex-col md:flex-row items-start md:items-center gap-x-4'>
                     <Title className='whitespace-nowrap'>ПРЕМУШЕСТВА НАШИХ <span className='hidden md:inline-block'>УСЛУГ</span></Title>
-                    <div className='h-[2px] w-full hidden md:block bg-primary' />
+                    <div className='h-[2px] w-full hidden md:block bg-gradient-to-r from-primary via-primary/50 to-primary/0' />
                     <div className='w-full'>
                         <div className='inline-flex w-full items-center md:hidden gap-x-4'>
                             <Title>УСЛУГ</Title>
