@@ -52,9 +52,9 @@ export const OurAdvantage = () => {
                     </div>
                 </div>
 
-                {/* <img src='/icons/vertical-line.svg' className='absolute top-1/3 translate-y-[50px] left-1/2 -translate-x-1/2' /> */}
+                <img src='/icons/vertical-line.svg' className='absolute top-1/3 translate-y-[50px] left-1/2 -translate-x-1/2' />
                 <img src="/icons/curved-line.svg" className="hidden md:block -translate-y-[110px] w-[82%] mx-auto relative-[1]" />
-                <Button className="block mx-auto md:-translate-y-16 mt-8 md:mt-0 hover:bg-white hover:text-primary transition-all border border-primary">ЗАКАЗАТЬ ЗВОНОК</Button>
+                <Button className="block mx-auto md:-translate-y-16 mt-8 md:mt-0 hover:bg-white hover:text-primary transition-all border border-primary absolute sm:relative bottom-[-20px] right-10 sm:right-auto">ЗАКАЗАТЬ ЗВОНОК</Button>
             </Container>
         </Section>
     )

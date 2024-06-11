@@ -7,9 +7,12 @@ import Image from 'next/image'
 import { Container } from '@/shared/ui/Container'
 import { MiniButton } from '@/shared/ui/MiniButton'
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick'
+import { LanguageChanger } from './LanguageChanger'
 
 export const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = React.useState(false)
+    const [openLanguage, setOpenLanguage] = React.useState(false)
+    const [openLanguagePC, setOpenLanguagePC] = React.useState(false)
 
     const closeMenu = () => {
         // setIsOpenMenu(false)
@@ -32,9 +35,10 @@ export const Header = () => {
                     </ul>
                     <div className='flex items-center gap-x-4'>
                         <div className='hidden lg:flex items-center gap-x-2'>
-                            <button className='flex items-center gap-x-2 mr-2'>
+                            <button onClick={() => setOpenLanguagePC((prev) => !prev)} className='flex items-center gap-x-2 mr-2 relative'>
                                 <h4 className='text-[18px] font-medium'>RU</h4>
                                 <Image src={'/icons/arrow-down.svg'} width={14} height={14} alt='Arrow down icon' />
+                                <LanguageChanger isOpen={openLanguagePC} />
                             </button>
                             <a href="tel:+99363877877">
                                 <MiniButton
@@ -55,18 +59,19 @@ export const Header = () => {
                 </div>
 
 
-                <div onClick={closeMenu} className={clsx('fixed transition-all duration-500 backdrop-blur-sm z-[999] bg-opacity-30 top-0 left-0 bg-black w-screen h-screen flex justify-end', {
-                    'visible opacity-100': isOpenMenu,
-                    'invisible opacity-100': !isOpenMenu
+                <div onClick={closeMenu} className={clsx('fixed transition-all backdrop-blur-sm z-[999] bg-opacity-30 top-0 left-0 bg-black w-screen h-screen flex justify-end', {
+                    'visible opacity-100 duration-300': isOpenMenu,
+                    'invisible opacity-100 duration-100': !isOpenMenu
                 })}>
                     <div ref={divRef} className={clsx('bg-[#004900A6] rounded-tl-[30px] rounded-bl-[30px] backdrop-blur-sm text-white w-[70%] h-screen p-4 transition-all duration-500 flex justify-end', {
                         'translate-x-0': isOpenMenu,
                         'translate-x-[100%]': !isOpenMenu
                     })}>
-                        <ul className='space-y-3 text-right mt-8'>
-                            <li className='flex items-center justify-end gap-x-2'>
+                        <ul className='space-y-3 text-right mt-8 relative'>
+                            <li className='flex items-center justify-end gap-x-2 relative' onClick={() => setOpenLanguage((prev) => !prev)}>
                                 <button className='text-[16px] font-semibold'>RU</button>
                                 <Image src={'/icons/arrow-up.svg'} alt='Arrow up' width={20} height={20} />
+                                <LanguageChanger isOpen={openLanguage} />
                             </li>
                             <li onClick={() => setIsOpenMenu(false)}><a className='text-[16px] font-semibold' href="#target">О компании</a></li>
                             <li onClick={() => setIsOpenMenu(false)}><a className='text-[16px] font-semibold' href="#services">Услуги</a></li>

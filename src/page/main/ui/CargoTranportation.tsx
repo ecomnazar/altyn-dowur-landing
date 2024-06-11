@@ -65,9 +65,19 @@ export const CargoTranportation = () => {
                                         <input type="text" placeholder='Куда везти' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                         <Image src={'/icons/red-point.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                     </div>
+                                    <div className='relative hidden sm:block'>
+                                        <input type="date" placeholder='Дата доставки' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
+                                    </div>
+                                </div>
+
+                                <div className='grid grid-cols-2 sm:hidden gap-4'>
                                     <div className='relative'>
                                         <input type="date" placeholder='Дата доставки' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                         {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
+                                    </div>
+                                    <div className='relative'>
+                                        <input type="text" placeholder='Вес груза' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                 </div>
 
@@ -82,7 +92,7 @@ export const CargoTranportation = () => {
 
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div>
-                                        <input type="text" placeholder='Вес груза' className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder='Вес груза' className='hidden sm:block rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                     <div className=''>
                                         <button onClick={handleEnableTrack} className='flex items-center justify-center gap-x-2 rounded-full h-12 w-full bg-primary text-white'>
