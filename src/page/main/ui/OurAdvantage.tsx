@@ -20,7 +20,7 @@ export const OurAdvantage = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 -space-y-8 md:space-y-0 md:grid-cols-6 mt-12 md:mt-48 relative z-[99]">
-                    <div className="flex flex-col justify-end first translate-y-[60px] md:-translate-y-[20px] lg:translate-y-0 items-center w-fit md:w-auto mr-auto md:mr-0 group">
+                    <div className="flex flex-col justify-end first translate-y-[70px] md:-translate-y-[20px] lg:translate-y-0 items-center w-fit md:w-auto mr-auto md:mr-0 group">
                         <Image width={50} height={50} src="/icons/services-icon-1.svg" alt="Service 1" className="md:mx-auto mb-4 group-hover:-translate-y-2 transition-all" />
                         <div className="text-center font-medium max-w-[150px]">УПАКОВКА<br />ГРУЗА</div>
                         <div className="md:mx-auto w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-4 font-semibold text-[18px]">1</div>
@@ -30,7 +30,7 @@ export const OurAdvantage = () => {
                         <div className="text-center font-medium max-w-[150px] md:mx-auto">ПОГРУЗОЧНО - РАЗГРУЗОЧНЫЕ РАБОТЫ</div>
                         <div className="md:mx-auto w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-4 font-semibold text-[18px]">2</div>
                     </div>
-                    <div className="flex flex-col justify-end md:-translate-y-[88px]  items-center w-fit md:w-auto mr-auto md:mr-0 group">
+                    <div className="flex flex-col justify-end translate-y-[25px] md:-translate-y-[88px] items-center w-fit md:w-auto mr-auto md:mr-0 group">
                         <Image width={60} height={60} src="/icons/services-icon-3.svg" alt="Service 3" className="md:mx-auto mb-4 group-hover:-translate-y-2 transition-all" />
                         <div className="text-center font-medium max-w-[150px]">ОТВЕТСТВЕННОЕ ХРАНЕНИЕ</div>
                         <div className="md:mx-auto w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-4 font-semibold text-[18px]">3</div>
