@@ -1,14 +1,24 @@
+import { useTranslation } from '@/app/i18n'
 import { Container } from '@/shared/ui/Container'
 import { Section } from '@/shared/ui/Section'
 import { Title } from '@/shared/ui/Title'
 import Image from 'next/image'
 import React from 'react'
 
-export const OurTarget = () => {
+interface Props {
+    lng: string
+}
+
+export const OurTarget: React.FC<Props> = async ({ lng }) => {
+
+    const { t } = await useTranslation(lng)
+
+
     return (
         <Section id='target' className="bg-[#95B295]/50">
             <Container>
                 <div className='flex flex-col'>
+                    {/* <Title>НАША ЦЕЛЬ-СТРЕМЛЕНИЕ К <span className='hidden lg:inline-block'>ЛУЧШИМ</span></Title> */}
                     <Title>НАША ЦЕЛЬ-СТРЕМЛЕНИЕ К <span className='hidden lg:inline-block'>ЛУЧШИМ</span></Title>
                     <div className='w-full'>
                         <div className='inline-flex w-full items-center  gap-x-4'>
@@ -23,28 +33,16 @@ export const OurTarget = () => {
                     </div>
                     <div>
                         <h4 className="text-[14px] md:text-[18px] mt-4 md:mt-0 font-normal">
-                            Транспортно-логистическая компания
-                            «Алтын Довур» осуществляет свою
-                            деятельность на рынке с июня 2020 года.
+                            {t('ourGoal1')}
                             <br />
                             <br />
-                            За годы работы компания успела нарастить
-                            существенный опыт в сфере
-                            железнодорожных грузоперевозок как
-                            внутри страны, так и за её пределами.
+                            {t('ourGoal2')}
                             <br />
                             <br />
-                            Мы осуществляем железнодорожные
-                            грузоперевозки по странам СНГ и третьим
-                            странам (транзит, экспорт, импорт) и
-                            экспедирование грузов.
+                            {t('ourGoal3')}
                             <br />
                             <br />
-                            На сегодняшний день наша компания
-                            располагает порядка 220 крытых,
-                            290 полувагонов, 10 фитингов, 200 цистерн
-                            под сжиженный газ, 110 цистерн для
-                            перевозки светлых нефтепродуктов.
+                            {t('ourGoal4')}
                         </h4>
                     </div>
                 </div>

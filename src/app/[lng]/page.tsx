@@ -8,18 +8,20 @@ import { OurServices } from "@/page/main/ui/OurServices";
 import { OurTarget } from "@/page/main/ui/OurTarget";
 import { CargoTrackConfirmationModal } from "@/page/main/ui/modals/CargoTrackConfirmationModal";
 import { ServiceEnabledModal } from "@/page/main/ui/modals/ServiceEnabledModal";
+import { useTranslation } from "../i18n";
 
-export default function Home() {
+export default async function Home({ params: { lng } }: { params: { lng: string } }) {
+
   return (
     <div className="overflow-x-hidden">
-      <Header />
-      <CargoTranportation />
-      <OurTarget />
-      <OurAdvantage />
-      <OurServices />
+      <Header lng={lng} />
+      <CargoTranportation lng={lng} />
+      <OurTarget lng={lng} />
+      <OurAdvantage lng={lng} />
+      <OurServices lng={lng} />
       <Clients />
-      <OurAddress />
-      <Footer />
+      <OurAddress lng={lng} />
+      <Footer lng={lng} />
 
       {/* MODALS */}
 

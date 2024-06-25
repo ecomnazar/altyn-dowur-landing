@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Link from 'next/link';
 import React from 'react'
 
 interface Props {
@@ -13,9 +14,18 @@ export const LanguageChanger: React.FC<Props> = ({ className, isOpen }) => {
             'opacity-0 invisible translate-y-[0px] ': !isOpen
         })}>
             <ul className='text-black py-2'>
-                <li className='px-4 py-1'>TM</li>
-                <li className='px-4 py-1'>RU</li>
-                <li className='px-4 py-1'>EN</li>
+                <li className='px-4 py-1'>
+
+                    <Link href={`/tm`}>TM</Link>
+                </li>
+                <li className='px-4 py-1'>
+                    <Link href={`/ru`}>RU</Link>
+
+                </li>
+                <li className='px-4 py-1'>
+                    <Link href={`/en`}>EN</Link>
+
+                </li>
             </ul>
         </div>
     )
