@@ -19,7 +19,7 @@ export default async function Home({ params: { lng } }: { params: { lng: string 
       <OurTarget lng={lng} />
       <OurAdvantage lng={lng} />
       <OurServices lng={lng} />
-      <Clients />
+      <Clients lng={lng} />
       <OurAddress lng={lng} />
       <Footer lng={lng} />
 

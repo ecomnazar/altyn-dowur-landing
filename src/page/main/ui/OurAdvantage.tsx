@@ -13,15 +13,18 @@ interface Props {
 export const OurAdvantage: React.FC<Props> = async ({ lng }) => {
     const { t } = await useTranslation(lng)
 
+    const title1 = lng === 'ru' ? 'ПРЕМУШЕСТВА НАШИХ' : lng === 'en' ? 'BENEFITS OF OUR SERVICES' : 'BIZIŇ HYZMATLARMYZYŇ'
+    const title2 = lng === 'ru' ? 'УСЛУГ' : lng === 'en' ? 'SERVICES' : 'PEÝDASY'
+
     return (
         <Section id='advantages' className="!pb-0 relative">
             <Container>
                 <div className='flex flex-col md:flex-row items-start md:items-center gap-x-4'>
-                    <Title className='whitespace-nowrap'>ПРЕМУШЕСТВА НАШИХ <span className='hidden md:inline-block'>УСЛУГ</span></Title>
+                    <Title className='whitespace-nowrap'>{title1} <span className='hidden md:inline-block'>{title2}</span></Title>
                     <div className='h-[2px] w-full hidden md:block bg-gradient-to-r from-primary via-primary/50 to-primary/0' />
                     <div className='w-full'>
                         <div className='inline-flex w-full items-center md:hidden gap-x-4'>
-                            <Title>УСЛУГ</Title>
+                            <Title>{title2}</Title>
                             <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary via-primary/50 to-primary/0' />
                         </div>
                     </div>

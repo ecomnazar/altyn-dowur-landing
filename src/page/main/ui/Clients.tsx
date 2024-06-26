@@ -9,7 +9,12 @@ import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css';
 
-export const Clients = () => {
+interface Props {
+    className?: string;
+    lng: string
+}
+
+export const Clients: React.FC<Props> = ({ lng }) => {
 
     const swiperRef = React.useRef<SwiperRef>(null)
 
@@ -18,16 +23,19 @@ export const Clients = () => {
 
     const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0
 
+    const title1 = lng === 'ru' ? 'Что говорят наши' : lng === 'en' ? 'What our customers' : 'Müşderilerimiziň'
+    const title2 = lng === 'ru' ? 'клиенты' : lng === 'en' ? 'are saying' : 'aýdýanlary'
+
     return (
         <Section>
             <Container>
                 <div className='w-full flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8'>
-                    <Title className='whitespace-nowrap'>Что говорят наши <span className='hidden lg:inline-block'>клиенты</span></Title>
+                    <Title className='whitespace-nowrap'>{title1} <span className='hidden lg:inline-block'>{title2}</span></Title>
                     <div className='hidden lg:inline-block h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
 
                     <div className='w-full flex lg:hidden items-center justify-between'>
                         <div className='flex items-center w-full'>
-                            <Title>клиенты</Title>
+                            <Title>{title2}</Title>
                             <div className='h-[2px] w-[90%] bg-gradient-to-r from-primary ml-4 via-primary/50 to-primary/0' />
                         </div>
                         <div className='flex items-center gap-x-3'>

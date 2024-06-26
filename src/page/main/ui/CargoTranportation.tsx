@@ -52,7 +52,7 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
                     {/* <Image src={'/icons/green-line.svg'} width={300} height={1} alt='Green line' className='hidden lg:block' /> */}
                     <div className='relative w-full md:w-fit'>
                         <Button onClick={handleOpen} className='whitespace-nowrap border border-primary hover:bg-white hover:text-primary transition-all'>{t('calculateHost')}</Button>
-                        <form onSubmit={sendForm} className={clsx('bg-[#004900]/40 z-[99] absolute rounded-[16px]  sm:w-[400px] md:w-[600px] bottom-0 left-0 md:left-auto md:right-0  p-6 backdrop-blur-sm safari-backdrop-blur-fallback transition-all duration-500', {
+                        <form onSubmit={sendForm} className={clsx('z-[99] absolute rounded-[16px] sm:w-[400px] md:w-[600px] bottom-0 left-0 md:left-auto md:right-0 p-6 safari-backdrop-blur-fallback transition-all duration-500', {
                             'translate-y-[110%] opacity-1': isOpen,
                             'translate-y-[105%] opacity-0': !isOpen
                         })}>
