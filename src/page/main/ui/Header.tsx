@@ -114,7 +114,7 @@ export const Header: React.FC<Props> = ({ lng }) => {
                 <Container className="shadow-lg w-[90%] sm:w-full absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex flex-wrap justify-between bg-white/80 backdrop-blur-sm rounded-[30px] py-8 px-12 gap-y-8">
                     <div className="basis-[30%]">
                         <div className="flex items-start">
-                            <h4 className="text-primary text-[70px] md:text-[95px] leading-[100px] font-medium">22</h4>
+                            <h4 className="text-primary text-[70px] md:text-[95px] leading-[100px] font-medium">4</h4>
                             <h6 className="text-secondary">{t('years')}</h6>
                         </div>
                         <h4 className="max-w-[170px] font-medium text-[16px] text-secondary">{t('successWork')}</h4>

@@ -52,5 +52,7 @@
     "aboutCompany": "О компании",
     "advantages": "Преимущества",
     "footerOurServices": "Нашы услуги",
-    "testimonials": "Отзывы"
+    "testimonials": "Отзывы",
+    "cargoTrackConfirmationModalTitle": "Данная услуга является платной и производится за каждый вагона",
+    "serviceEnabledModal": "Услуга подключена к общей стоимости груза"
 }

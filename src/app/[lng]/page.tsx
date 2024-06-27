@@ -25,8 +25,8 @@ export default async function Home({ params: { lng } }: { params: { lng: string 
 
       {/* MODALS */}
 
-      <CargoTrackConfirmationModal />
-      <ServiceEnabledModal />
+      <CargoTrackConfirmationModal lng={lng} />
+      <ServiceEnabledModal lng={lng} />
 
     </div>
   );

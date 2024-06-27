@@ -18,7 +18,6 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
 
     const { t } = useTranslation(lng)
 
-
     const [isOpen, setIsOpen] = React.useState(false)
     const [enableInfo, setEnableInfo] = React.useState(false)
 
@@ -100,7 +99,7 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
 
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div>
-                                        <input type="text" placeholder='Вес груза' className='hidden sm:block rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('cargoWeight')} className='hidden sm:block rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                     <div className=''>
                                         <button onClick={handleEnableTrack} className='flex items-center justify-center gap-x-2 rounded-full h-12 w-full bg-primary text-white'>

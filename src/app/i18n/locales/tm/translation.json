@@ -14,7 +14,7 @@
     "inOurPark": "Parkymyzda",
     "haveClients": "bize uloşan we memnun galanlar",
     "transportation": "Uly aralyk otly ýük daşama",
-    "calculateHost": "Çykdajylary hasaplaň",
+    "calculateHost": "Çykdaýjylary hasaplaň",
     "calculateCost": "Ýük eltmegiň bahasyny hasaplaň",
     "dispatchStation": "Ugradyş stansiýasy",
     "destinationStation": "Barmaly stansiýasy",
@@ -31,7 +31,7 @@
     "back": "Yza",
     "serviceConnected": "Hyzmat ýüküň umumy bahasyna baglanyldy",
     "ourGoal": "BIZIŇ MAKSADYMYZ- IŞIMIZI GOWY ÝERINE ÝETIRMEK",
-    "ourGoal1": "«Altyn Dowür» HJ ulag we logistika kompaniýasy 2020-nji ýylyň iýun aýyndan bäri içki we daşary bazarda işleýär.",
+    "ourGoal1": "«Altyn Dowür» HJ ulag we logistika kompaniýasy 2020-nji ýylyň iýun aýyndan bäri içki we daşarky bazarda öz işini ýerine ýetirýä.",
     "ourGoal2": "Birnäçe ýyl bäri kompaniýa ýurduň içinde we daşary ýurtlarda harytlary demir ýol daşamak pudagynda möhüm tejribe toplamagy başardy.",
     "ourGoal3": "Halkara demir ýol transportyny (tranzit, eksport, import) we ýük ekspedisiýasyny amala aşyrýarys.",
     "ourGoal4": "Häzirki wagtda kompaniýamyzda 110 ýeňil nebit önümlerini daşamak üçin çelekler, 30  suwuklandyrylan gazy daşamak üçin çelekler, 220 ýapyk wagonlar, 290 ýarym wagonlar, 10 fitinglar.",
@@ -46,11 +46,13 @@
     "service1Title": "Ýükleri daş aralyga eltip bermek.",
     "service1Desc": "Bu ýük otlylary tarapyndan berilýän esasy hyzmatdyr. Dürli görnüşli bolup biler, şol sanda gaplar, köp ýük, suwuklyklar, agyr we aşa köp ýük we ş.m.",
     "whatSayClients": "Müşderilerimiziň aýdýanlary",
-    "ourAddress": "BIZIŇ ÝERLRŞÝÄN ÝERIMIZ",
+    "ourAddress": "BIZIŇ ÝERLEŞÝÄN ÝERIMIZ",
     "adress": "744007, Türkmenistan, Aşgabat, Beýik Saparmyrat Turkmenbaşy şaýoly, 7",
     "aboutUs": "Biz barada",
     "aboutCompany": "Biz barada",
     "advantages": "Peýdamyz",
     "footerOurServices": "Biziň hyzmatlarmyz",
-    "testimonials": "Müşderilerimiz"
+    "testimonials": "Müşderilerimiz",
+    "cargoTrackConfirmationModalTitle": "Bu hyzmat tölegli we her wagon üçindir",
+    "serviceEnabledModal": "Hyzmat ýüküň umumy bahasyna baglanyldy"
 }

@@ -4,8 +4,15 @@ import clsx from 'clsx'
 import React from 'react'
 import Image from 'next/image'
 import { useStore } from '@/entities/useStore'
+import { useTranslation } from 'react-i18next'
 
-export const ServiceEnabledModal = () => {
+interface Props {
+    lng: string;
+}
+
+export const ServiceEnabledModal: React.FC<Props> = ({ lng }) => {
+    const { t } = useTranslation(lng)
+
     const isOpen = useStore((state) => state.serviceEnabledModal)
 
     const close = useStore((state) => state.setServiceEnabledModal)
@@ -30,7 +37,7 @@ export const ServiceEnabledModal = () => {
                 <button className='absolute top-5 right-5' onClick={onClose}>
                     <Image src={'/icons/green-close.svg'} width={18} height={18} alt='Close icon' />
                 </button>
-                <h3 className='text-primary font-bold text-[20px] text-left'>Услуга подключена к общей стоимости груза</h3>
+                <h3 className='text-primary font-bold text-[20px] text-left'>{t('serviceEnabledModal')}</h3>
             </div>
         </div>
     )

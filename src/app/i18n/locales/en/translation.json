@@ -52,5 +52,7 @@
     "aboutCompany": "About the company",
     "advantages": "Advantages",
     "footerOurServices": "Our services",
-    "testimonials": "Testimonials"
+    "testimonials": "Testimonials",
+    "cargoTrackConfirmationModalTitle": "This service have a cost and it’s performed on a per-vagon",
+    "serviceEnabledModal": "The service is connected to the total value of the shipment"
 }
