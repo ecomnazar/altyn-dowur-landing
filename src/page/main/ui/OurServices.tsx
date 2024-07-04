@@ -29,8 +29,12 @@ export const OurServices: React.FC<Props> = async ({ lng }) => {
                         description={t('service1Desc')}
                     />
                     <Accordion
-                        title={t('service1Title')}
-                        description={t('service1Desc')}
+                        title={t('service2Title')}
+                        description={t('service2Desc')}
+                    />
+                    <Accordion
+                        title={t('service3Title')}
+                        description={t('service3Desc')}
                     />
                 </div>
             </Container>

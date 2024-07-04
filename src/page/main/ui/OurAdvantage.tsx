@@ -5,6 +5,7 @@ import { Section } from '@/shared/ui/Section'
 import { Title } from '@/shared/ui/Title'
 import Image from 'next/image'
 import React from 'react'
+import { AdvantagesCallButton } from './AdvantagesCallButton'
 
 interface Props {
     lng: string
@@ -58,7 +59,7 @@ export const OurAdvantage: React.FC<Props> = async ({ lng }) => {
                         <div className="md:mx-auto w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-4 font-semibold text-[18px]">5</div>
                     </div>
                     <div className="hidden md:flex flex-col justify-end first md:-translate-y-[20px] lg:translate-y-0 items-center w-fit md:w-auto ml-auto md:ml-0 group">
-                        <Image width={60} height={60} src="/icons/services-icon-6.svg" alt="Service 6" className="md:mx-auto mb-4 group-hover:-translate-y-2 transition-all" />
+                        <Image width={90} height={90} src="/icons/services-icon-6.svg" alt="Service 6" className="md:mx-auto mb-4 group-hover:-translate-y-2 transition-all" />
                         {/* <div className="text-center font-medium max-w-[150px]">ДОСТАВКА<br />“ДО ДВЕРЕЙ”</div> */}
                         <div className="text-center font-medium max-w-[150px]">{t('benefit6')}</div>
                         <div className="md:mx-auto w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mt-4 font-semibold text-[18px]">6</div>
@@ -67,7 +68,7 @@ export const OurAdvantage: React.FC<Props> = async ({ lng }) => {
 
                 <img src='/icons/vertical-line.svg' className='absolute top-1/3 translate-y-[50px] w-[280px] md:hidden left-1/2 -translate-x-[45%]' />
                 <img src="/icons/curved-line.svg" className="hidden md:block -translate-y-[110px] w-[82%] mx-auto relative-[1]" />
-                <Button className="block mx-auto md:-translate-y-16 mt-8 md:mt-0 hover:bg-white hover:text-primary transition-all border border-primary absolute sm:relative bottom-[-20px] right-10 sm:right-auto">{t('bookCall')}</Button>
+                <AdvantagesCallButton />
             </Container>
         </Section>
     )

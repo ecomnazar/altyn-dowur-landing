@@ -4,6 +4,7 @@ import { MiniButton } from '@/shared/ui/MiniButton'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { NumberSelector } from './NumberSelector'
 
 interface Props {
     lng: string
@@ -33,12 +34,7 @@ export const Footer: React.FC<Props> = async ({ lng }) => {
                         <h4 className="text-primary font-bold text-[24px] uppercase mb-4 mt-4 md:mt-0">{t('contacts')}</h4>
                         <div className="flex flex-col lg:flex-row items-start gap-x-2">
                             <div className="space-y-2 mx-auto md:ml-0 text-center flex flex-col items-center md:items-start">
-                                <a href="tel:+99363877877">
-                                    <MiniButton
-                                        title="+993 63 87-78-77"
-                                        icon={<Image src={'/icons/call-icon.svg'} width={22} height={22} alt="Call icon" />}
-                                    />
-                                </a>
+                                <NumberSelector />
                                 <a href="tel:941122">
                                     <MiniButton
                                         title="941122 #113"

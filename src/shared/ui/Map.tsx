@@ -12,12 +12,12 @@ const Map = () => {
     return (
         <MapContainer
             attributionControl={false}
-            center={[37.939962, 58.393542]}
+            center={[37.940343, 58.393846]}
             zoom={15}
             style={{ width: "100%", height: "100%", borderRadius: "10px" }}
         >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker icon={markerIcon} position={[37.939962, 58.393542]}></Marker>
+            <Marker icon={markerIcon} position={[37.940343, 58.393846]}></Marker>
         </MapContainer>
     );
 };

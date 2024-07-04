@@ -38,7 +38,7 @@ export const Header: React.FC<Props> = ({ lng }) => {
                 <div className="bg-white/80 backdrop-blur-sm py-3 px-5 rounded-full flex items-center justify-between">
                     <Image width={70} height={70} src="/images/logo.png" alt="Altyn Döwür HJ Logo" />
                     <ul className="hidden lg:flex items-center gap-x-8">
-                        <li className='text-[18px] text-primary font-semibold'>{t('trucking')}</li>
+                        <li className='text-[16px] text-primary font-semibold'>{t('trucking')}</li>
                         <li><a href={'#target'} className="text-secondary font-medium text-[18px]" >{t('aboutTheCompany')}</a></li>
                         <li><a href={'#services'} className="text-secondary font-medium text-[18px]" >{t('services')}</a></li>
                         <li><a href={'#footer'} className="text-secondary font-medium text-[18px]" >{t('contacts')}</a></li>

@@ -73,14 +73,16 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
                                         <Image src={'/icons/red-point.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                     </div>
                                     <div className='relative hidden sm:block'>
-                                        <input type="date" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <Image src={'/icons/calendar.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                         {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
                                     </div>
                                 </div>
 
                                 <div className='grid grid-cols-2 sm:hidden gap-4'>
                                     <div className='relative'>
-                                        <input type="date" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <Image src={'/icons/calendar.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                         {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
                                     </div>
                                     <div className='relative'>
