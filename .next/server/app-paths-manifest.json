@@ -1,7 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/[lng]/login/page": "app/[lng]/login/page.js",
   "/[lng]/page": "app/[lng]/page.js",
   "/[lng]/register/page": "app/[lng]/register/page.js",
-  "/[lng]/icon.png/route": "app/[lng]/icon.png/route.js"
+  "/[lng]/icon.png/route": "app/[lng]/icon.png/route.js",
+  "/[lng]/login/page": "app/[lng]/login/page.js"
 }
