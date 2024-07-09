@@ -106,7 +106,23 @@ export const Header: React.FC<Props> = ({ lng }) => {
                         {t('headerTitle')}
                     </h2>
                     <h1 className="text-center text-[28px] sm:text-[34px] md:text-[46px] font-semibold text-white">Altyn Dowur H.J.</h1>
-                    <button className="text-white border rounded-full w-[250px] md:w-[350px] h-[60px] mx-auto font-semibold hover:bg-white hover:text-primary transition-all text-[18px] block !mt-8">{t('bookCall')}</button>
+                    <button
+                        onClick={() => {
+                            // Detect if the device is mobile
+                            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+                            if (isMobile) {
+                                // If mobile, initiate a call
+                                window.location.href = 'tel:+99363877877';
+                            } else {
+                                // If not mobile (i.e., PC), open the Telegram link
+                                window.open('https://t.me/Altyn_Dowur', '_blank');
+                            }
+                        }}
+                        className="text-white border rounded-full w-[250px] md:w-[350px] h-[60px] mx-auto font-semibold hover:bg-white hover:text-primary transition-all text-[18px] block !mt-8"
+                    >
+                        {t('bookCall')}
+                    </button>
                 </div>
             </Container>
 

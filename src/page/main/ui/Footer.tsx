@@ -56,10 +56,12 @@ export const Footer: React.FC<Props> = async ({ lng }) => {
                                             icon={<Image src={'/icons/instagram.svg'} width={21} height={21} alt="Instagram" />}
                                         />
                                     </a>
-                                    <MiniButton
-                                        title=""
-                                        icon={<Image src={'/icons/whatsapp.svg'} width={21} height={21} alt="Whatsapp" />}
-                                    />
+                                    <a href="https://wa.me/qr/5IIQFU2UQEN6N1">
+                                        <MiniButton
+                                            title=""
+                                            icon={<Image src={'/icons/whatsapp.svg'} width={21} height={21} alt="Whatsapp" />}
+                                        />
+                                    </a>
                                     <a href="https://t.me/Altyn_Dowur" target="_blank" >
                                         <MiniButton
                                             title=""

@@ -2,6 +2,7 @@
 
 import { useTranslation } from '@/app/i18n/client'
 import { useStore } from '@/entities/useStore'
+import { sendToEmail } from '@/shared/sendToEmail'
 import { Button } from '@/shared/ui/Button'
 import { Container } from '@/shared/ui/Container'
 import { Section } from '@/shared/ui/Section'
@@ -9,6 +10,7 @@ import { Title } from '@/shared/ui/Title'
 import clsx from 'clsx'
 import Image from 'next/image'
 import React from 'react'
+import toast from 'react-hot-toast'
 
 interface Props {
     lng: string
@@ -39,6 +41,55 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
     const sendForm = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
     }
+
+    const [from, setFrom] = React.useState('')
+    const [to, setTo] = React.useState('')
+    const [dateOfShipment, setDateOfShipment] = React.useState('')
+    const [cargoWeight, setCargoWeight] = React.useState('')
+    const [name, setName] = React.useState('')
+    const [phone, setPhone] = React.useState('')
+
+
+
+    const handleSubmit = () => {
+        // const target = e.target as typeof e.target & FormProps<{ value: string }>
+        // const fullname = target.fullname.value
+        // const mail = target.mail.value
+
+        let message = ``;
+        message += `<b>Ugradyş stansiýasy: </b>${from}\n`;
+        message += `<b>Barmaly stansiýasy: </b>${to}\n`;
+        message += `<b>Ugradylmaly senesi: </b>${dateOfShipment}\n`;
+        message += `<b>Ady: </b>${name}\n`;
+        message += `<b>Telefon belgisi: </b>${phone}\n`;
+        message += `<b>Ýüküň agramy: </b>${cargoWeight}\n`;
+        message += `<b>Ýüki yzarlamak hyzmaty: </b>${enableTrack ? 'Açyk' : 'Ýapyk'}\n`;
+
+        const emailDetails = {
+            subject: 'Mail from nazarly.digital',
+            message,
+            to_email: process.env.NEXT_PUBLIC_TO_EMAIL!,
+        }
+
+        // toast.promise(Promise.all([sendToTelegram(message), sendToEmail(emailDetails)]), {
+        toast.promise(Promise.all([sendToEmail(emailDetails)]), {
+            loading: 'Loading',
+            success: 'Success',
+            error: 'Error'
+        }).then(() => {
+            setFrom('')
+            setTo('')
+            setDateOfShipment('')
+            setCargoWeight('')
+            setName('')
+            setPhone('')
+            changeEnableTrack(false)
+            setIsOpen(false)
+            setEnableInfo(false)
+        }
+        )
+    }
+
     return (
         <Section className="pt-[270px] md:pt-48">
             <Container>
@@ -63,17 +114,17 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
                             </div>
                             <div className='mt-6 space-y-4'>
                                 <div className='relative'>
-                                    <input type="text" placeholder={t('dispatchStation')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                    <input type="text" placeholder={t('dispatchStation')} onChange={(e) => setFrom(e.target.value)} value={from} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     <Image src={'/icons/green-point.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                 </div>
 
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div className='relative'>
-                                        <input type="text" placeholder={t('destinationStation')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('destinationStation')} onChange={(e) => setTo(e.target.value)} value={to} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                         <Image src={'/icons/red-point.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                     </div>
                                     <div className='relative hidden sm:block'>
-                                        <input type="text" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('dateOfShipment')} onChange={(e) => setDateOfShipment(e.target.value)} value={dateOfShipment} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                         <Image src={'/icons/calendar.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
                                         {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
                                     </div>
@@ -81,27 +132,27 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
 
                                 <div className='grid grid-cols-2 sm:hidden gap-4'>
                                     <div className='relative'>
-                                        <input type="text" placeholder={t('dateOfShipment')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
-                                        <Image src={'/icons/calendar.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' />
+                                        <input type="text" placeholder={t('dateOfShipment')} onChange={(e) => setDateOfShipment(e.target.value)} value={dateOfShipment} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        {/* <Image src={'/icons/calendar.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
                                         {/* <Image src={'/icons/date.svg'} width={22} height={22} alt='Point icon' className='absolute top-1/2 -translate-y-1/2 right-5' /> */}
                                     </div>
                                     <div className='relative'>
-                                        <input type="text" placeholder={t('cargoWeight')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('cargoWeight')} onChange={(e) => setCargoWeight(e.target.value)} value={cargoWeight} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                 </div>
 
                                 <div className='grid grid-cols-2 gap-2 sm:gap-4'>
                                     <div>
-                                        <input type="text" placeholder={t('yourName')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('yourName')} onChange={(e) => setName(e.target.value)} value={name} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                     <div>
-                                        <input type="text" placeholder={t('yourPhone')} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('yourPhone')} onChange={(e) => setPhone(e.target.value)} value={phone} className='rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                 </div>
 
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                                     <div>
-                                        <input type="text" placeholder={t('cargoWeight')} className='hidden sm:block rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
+                                        <input type="text" placeholder={t('cargoWeight')} onChange={(e) => setCargoWeight(e.target.value)} value={cargoWeight} className='hidden sm:block rounded-full h-[50px] w-full px-5 placeholder:text-[#777777]' />
                                     </div>
                                     <div className=''>
                                         <button onClick={handleEnableTrack} className='flex items-center justify-center gap-x-2 rounded-full h-12 w-full bg-primary text-white'>
@@ -121,7 +172,7 @@ export const CargoTranportation: React.FC<Props> = ({ lng }) => {
                                     </div>
                                     <p className='text-[15px]' dangerouslySetInnerHTML={{ __html: t('iGiveConsent') }}></p>
                                 </div>
-                                <button className='rounded-full h-12 w-full bg-primary text-white'>{t('submit')}</button>
+                                <button onClick={handleSubmit} className='rounded-full h-12 w-full bg-primary text-white'>{t('submit')}</button>
                             </div>
                         </form>
                     </div>
