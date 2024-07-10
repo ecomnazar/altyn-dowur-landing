@@ -1,30 +1,42 @@
 'use client'
 
-import { sendToTelegram } from '@/shared/sendToTelegram';
+import React from 'react'
 import { Button } from '@/shared/ui/Button';
 import { PasswordInput } from '@/shared/ui/PasswordInput';
+import { FaArrowLeft } from "react-icons/fa";
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import React from 'react'
 import toast from 'react-hot-toast';
-import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
 const RegisterPage = () => {
     const [email, setEmail] = React.useState('')
     const router = useRouter()
 
-    const handleSubmit = () => {
-        let message = `<b>Täze müşderi: ${email}</b>\n`;
 
-        toast.promise(Promise.all([sendToTelegram(message)]), {
-            loading: 'Loading',
-            success: 'Success',
-            error: 'Error'
-        }).then(() => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const res = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        });
+
+
+
+        // const data = await res.json();
+        if (res.ok) {
+            // alert(data.message);
             router.push('/')
-        })
-    }
+            toast.success('')
+        } else {
+            router.push('/')
+            toast.error('')
+        }
+    };
 
     return (
         <div className='w-screen h-screen flex items-center relative justify-center'>
